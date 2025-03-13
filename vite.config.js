@@ -60,8 +60,8 @@ export default defineConfig({
             input: {
                 // htmlを追加する場合にはこちらに追記
                 index: resolve(root, "index.html"),
-                diverse: resolve(root, "diverse.html"),
-                test: resolve(root, "test.html"),
+                // diverse: resolve(root, "diverse.html"),
+                // test: resolve(root, "test.html"),
             },
         },
     },
