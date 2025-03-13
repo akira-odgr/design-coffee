@@ -1,3 +1,5 @@
+@use "./globals/" as *;
+
 @import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Klee+One&display=swap");
 
 // @font-face {
@@ -38,9 +40,10 @@ a {
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin-inline: auto;
-    // padding-inline: 40px;
+    padding-inline: 40px;
 }
 
 .heading-group {
@@ -79,7 +82,11 @@ header {
 
     .logo {
         display: block;
-        width: 180px;
+        width: 120px;
+
+        @include mq("md") {
+            width: 180px;
+        }
 
         img {
             display: flex;
@@ -135,10 +142,15 @@ header {
     }
 
     nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         gap: 20px;
+        display: none;
+
+        @include mq("md") {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         ul {
             display: flex;
             align-items: center;
@@ -183,22 +195,23 @@ header {
     height: 90vh;
 
     &__content {
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        transform: translate(-10%, -35%);
         max-width: 800px;
         width: fit-content;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        // text-align: center;
+
+        margin-inline: auto;
+        margin-top: 50px;
+        text-align: center;
+
+        @include mq("md") {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            transform: translate(-10%, -35%);
+        }
 
         h2 {
             width: 0;
-            font-size: 5rem;
+            font-size: fluid-text(48px, 80px);
             font-weight: 700;
             font-family: var(--en-font);
             overflow: hidden;
@@ -223,21 +236,26 @@ header {
         }
 
         p {
-            font-size: 20px;
+            font-size: fluid-text(14px, 20px);
             font-weight: 600;
             font-family: var(--ja-font);
+            margin-top: 0.5em;
         }
     }
 
     &__image {
         position: absolute;
-        top: 50%;
+        top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
         height: 100vh;
         display: flex;
         align-items: center;
+
+        @include mq("md") {
+            top: 50%;
+        }
     }
 
     &__holder {
@@ -253,11 +271,13 @@ header {
     }
 
     &__nav {
+        font-size: fluid-text(50px, 120px);
+        text-align: right;
         position: absolute;
         bottom: 10%;
-        right: 1.3em;
-        // font-size: 120px;
-        text-align: right;
+        right: 0.3em;
+        height: 1em;
+        // width: 100%;
         background-color: #eee;
 
         &__btn {
@@ -265,7 +285,11 @@ header {
             border: 0;
             opacity: 0.7;
             cursor: pointer;
-            padding: 0;
+
+            & img {
+                width: 100%;
+                height: 100%;
+            }
 
             &.prev {
                 img {
@@ -281,13 +305,16 @@ header {
 
     .scroll {
         position: absolute;
-        inset: auto auto 5% 5%;
+        inset: auto auto 25% 5%;
         writing-mode: vertical-lr;
-        // display: grid;
+
+        @include mq("md") {
+            inset: auto auto 5% 5%;
+        }
 
         a {
             font-family: var(--en-font);
-            font-size: 1.5rem;
+            font-size: fluid-text(14px, 24px);
             letter-spacing: 0.3em;
             display: grid;
             grid-template-columns: auto 1fr;
@@ -303,6 +330,8 @@ header {
                     rgb(0 0 0 / 1),
                     rgb(0 0 0 / 0)
                 );
+                // width: 5px;
+                // height: 80px;
 
                 block-size: 4px;
             }
@@ -495,7 +524,7 @@ header {
         width: 30em;
         position: absolute;
         padding: 1rem 2rem;
-        bottom: 0;
+        bottom: 15%;
         right: 0;
         text-align: right;
     }
@@ -518,7 +547,12 @@ header {
         opacity: 0;
         background-color: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(20px);
+        box-shadow: 5px 5px 20px rgb(255 255 255 / 0.5);
         transition: 0.4s;
+
+        &:first-child {
+            opacity: 1;
+        }
     }
 
     &__headline {

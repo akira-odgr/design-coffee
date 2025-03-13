@@ -16,14 +16,14 @@ let world = null,
     _removePass = null,
     _setProgress = null;
 export default async function ({
-    world,
+    world: _world,
     mouse,
     menu,
     loader,
     viewport,
     scroller,
 }) {
-    // world = _world;
+    world = _world;
 
     // .panel__mediaのマウス情報（uMouse、uHover）を監視対象へ
     const planeEls = INode.qsAll('[data-webgl="plane-sphere"]');
@@ -39,14 +39,6 @@ export default async function ({
         ".hero__nav__btn.next"
     );
     _goTo = goTo;
-
-    // const { goTo } = mountSkillBtnHandler(
-    //     ".menu2__slider",
-    //     ".menu2__nav__btn.next",
-    //     ".menu2__nav__btn.prev",
-    //     ".menu2__ul"
-    // );
-    // _goTo = goTo;
 
     // SKILLセクションのスライダをスクロールに連動
     mountScrollHandler(".menu2__slider", ".menu2", ".menu2__ul");
