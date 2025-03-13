@@ -192,26 +192,28 @@ header {
     position: relative;
     // display: flex;
     // align-items: center;
-    height: 90vh;
+    height: 100vh;
 
     &__content {
-        max-width: 800px;
+        position: absolute;
         width: fit-content;
 
         margin-inline: auto;
-        margin-top: 50px;
         text-align: center;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
 
         @include mq("md") {
             position: absolute;
             top: 10%;
             left: 10%;
             transform: translate(-10%, -35%);
+            text-align: left;
         }
 
         h2 {
-            width: 0;
-            font-size: fluid-text(48px, 80px);
+            font-size: fluid-text(42px, 80px);
             font-weight: 700;
             font-family: var(--en-font);
             overflow: hidden;
@@ -236,7 +238,7 @@ header {
         }
 
         p {
-            font-size: fluid-text(14px, 20px);
+            font-size: fluid-text(14px, 16px);
             font-weight: 600;
             font-family: var(--ja-font);
             margin-top: 0.5em;
@@ -245,25 +247,31 @@ header {
 
     &__image {
         position: absolute;
-        top: 35%;
+        top: 25%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
 
         @include mq("md") {
             top: 50%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
         }
     }
 
     &__holder {
-        // position: relative;
+        position: relative;
         width: 60%;
-        max-width: unset;
+        max-width: 400px;
         margin: 0 auto;
-        margin-bottom: 20%;
+
+        @include mq("xl") {
+            width: 60%;
+            max-width: 950px;
+            margin: 0 auto;
+            margin-bottom: 20%;
+        }
     }
 
     &__slider {
@@ -271,7 +279,7 @@ header {
     }
 
     &__nav {
-        font-size: fluid-text(50px, 120px);
+        font-size: fluid-text(50px, 100px);
         text-align: right;
         position: absolute;
         bottom: 10%;
@@ -287,8 +295,8 @@ header {
             cursor: pointer;
 
             & img {
-                width: 100%;
-                height: 100%;
+                width: 1em;
+                height: 1em;
             }
 
             &.prev {
