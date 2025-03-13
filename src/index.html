@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Coffee</title>
+
+  <link rel="stylesheet" href="./styles/loader.scss" />
+  <script type="module" src="./scripts/index.js"></script>
+</head>
+
+<body>
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-rect">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <span class="loader-percent">0%</span>
+    </div>
+  </div>
+
+
+  <div id="global-container">
+
+    <div class="fresnel" data-webgl="fresnel-bg" data-tex-1="/movie/fresnel_back.webm"
+      data-tex-2="/movie/fresnel_back.mov"></div>
+
+    <div id="page-container" data-page="home">
+      <header>
+        <h1>
+          <a href="#" class="logo">
+            <img src="/img/logo.svg" alt="">
+          </a>
+        </h1>
+
+
+        <nav>
+          <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button>&#128269;</button>
+          </div>
+          <ul>
+            <li><a href="#about">当店について</a></li>
+            <li><a href="#menu">メニュー</a></li>
+            <li><a href="#shop">店舗情報</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="hero" id="hero">
+        <div class="hero__content">
+          <h2>No Coffee, No Life.</h2>
+          <p>豆の産地・焙煎からこだわり抜いたコーヒー</p>
+        </div>
+
+        <div class="hero__image">
+          <div class="hero__holder">
+            <div class="hero__slider slider" data-webgl="slider-world" data-tex-1="/img/hero.jpg"
+              data-tex-2="/img/hero2.jpg" data-tex-3="/img/hero3.jpg" data-tex-4="/movie/hero.mp4"
+              data-tex-5="/img/hero.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__nav">
+          <button class="hero__nav__btn prev">
+            <img src="/img/slide-nav.svg" alt="">
+          </button>
+          <button class="hero__nav__btn next">
+            <img src="/img/slide-nav.svg" alt="">
+          </button>
+        </div>
+        <!-- <div class="hero__image">
+          <img data-webgl="slider-frag" data-frag="gate" data-tex-1="/img/hero.jpg" data-tex-2="/img/hero2.jpg"
+            data-tex-3="/img/hero3.jpg" alt="">
+        </div> -->
+
+
+        <div class="scroll">
+          <a href="#">Scroll</a>
+        </div>
+      </section>
+      <!-- <hr class="section-hr" /> -->
+
+      <section class="about main-section" id="about">
+        <div class="container">
+          <div class="heading-group">
+            <h2>About Us</h2>
+            <span>当店について</span>
+          </div>
+
+          <div class="about__layout">
+            <div class="about__layout__image" data-webgl="plane-sphere" data-tex-1="/img/about.jpg"
+              data-scroll-trigger="progress">
+
+            </div>
+
+            <div class="about__layout__text">
+              <div>
+                <img src="/img/logo.svg" alt="">
+              </div>
+              <h3 data-scroll-trigger="fade">豆にこだわった本格カフェ</h3>
+              <p data-scroll-trigger="fade">スペシャルティコーヒー専門店「DESIGN COFFEE」は、2024年に東京で創業したコーヒーロースターです。</p>
+              <p data-scroll-trigger="fade">豆の産地・焙煎からこだわり抜いたコーヒーを提供しています。</p>
+              <p data-scroll-trigger="fade">こだわりの一杯をご提供させていたdきますので、有意義な時間をお過ごしください。</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- <section class="menu main-section" id="menu">
+        <div class="heading-group">
+          <h2>Menu</h2>
+          <span>メニュー</span>
+        </div>
+
+        <div class="menu__container container">
+
+          <div class="item">
+            <div class="layer">
+              <img src="/img/menu-1.jpg">
+            </div>
+            <h4>エスプレッソ</h4>
+            <p>￥300</p>
+          </div>
+
+          <div class="item">
+            <div class="layer">
+              <img src="/img/menu-2.jpg">
+            </div>
+            <h4>カプチーノ</h4>
+            <p>￥400</p>
+          </div>
+
+          <div class="item">
+            <div class="layer">
+              <img src="/img/menu-3.jpg">
+            </div>
+            <h4>Step 03</h4>
+          </div>
+
+          <div class="item">
+            <div class="layer">
+              <img src="/img/menu-4.jpg">
+            </div>
+            <h4>Step 03</h4>
+          </div>
+          <div class="item">
+            <div class="layer">
+              <img src="/img/menu-5.jpg">
+            </div>
+            <h4>Step 03</h4>
+          </div>
+          <div class="item">
+            <div class="layer">
+              <img src="/img/menu-6.jpg">
+            </div>
+            <h4>Step 03</h4>
+          </div>
+          <div class="item">
+            <div class="layer">
+              <img src="/img/menu-7.jpg">
+            </div>
+            <h4>Step 03</h4>
+          </div>
+          <div class="item">
+            <div class="layer">
+              <img src="/img/menu-8.jpg">
+            </div>
+            <h4>Step 03</h4>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="menu2" data-scroll-trigger="ripple">
+        <div class="heading-group">
+          <h2>Menu</h2>
+          <span>メニュー</span>
+        </div>
+        <div class="menu2__inner">
+          <div class="menu2__holder">
+
+            <div class="menu2__slider slider" data-webgl="slider-reflect" data-tex-1="/img/menu-1.jpg"
+              data-tex-2="/img/menu-2.jpg" data-tex-3="/img/menu-3.jpg" data-tex-4="/img/menu-4.jpg"
+              data-tex-5="/img/menu-5.jpg">
+            </div>
+
+          </div>
+
+          <div class="menu2__content">
+            <ul class="menu2__ul">
+              <div class="menu2__li">
+                <h3 class="menu2__headline">カフェラテ ￥300</h3>
+                <p class="menu2__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eaque voluptatem hic voluptates nobis
+                  architecto consequatur! Accusamus laudantium fuga fugit?
+                </p>
+              </div>
+              <div class="menu2__li">
+                <h3 class="menu2__headline">カフェラテ ￥300</h3>
+                <p class="menu2__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eaque voluptatem hic voluptates nobis
+                  architecto consequatur! Accusamus laudantium fuga fugit?
+                </p>
+              </div>
+              <div class="menu2__li">
+                <h3 class="menu2__headline">カフェラテ ￥300</h3>
+                <p class="menu2__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eaque voluptatem hic voluptates nobis
+                  architecto consequatur! Accusamus laudantium fuga fugit?
+                </p>
+              </div>
+              <div class="menu2__li">
+                <h3 class="menu2__headline">カフェラテ ￥300</h3>
+                <p class="menu2__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eaque voluptatem hic voluptates nobis
+                  architecto consequatur! Accusamus laudantium fuga fugit?
+                </p>
+              </div>
+              <div class="menu2__li">
+                <h3 class="menu2__headline">カフェラテ ￥300</h3>
+                <p class="menu2__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eaque voluptatem hic voluptates nobis
+                  architecto consequatur! Accusamus laudantium fuga fugit?
+                </p>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <footer class="footer"></footer>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+  </div>
+</body>
+
+</html>

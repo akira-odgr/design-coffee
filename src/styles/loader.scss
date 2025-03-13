@@ -1,0 +1,95 @@
+@use "./globals" as *;
+
+body {
+    overflow: hidden;
+}
+
+#global-container {
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: 0;
+}
+
+#page-container {
+    height: 100vh;
+}
+
+#canvas {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    // background: url("/img/bg-image.jpg") center center / cover no-repeat;
+}
+
+.loader {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(#ececec, #fff);
+    font-size: fluid-text(17px, 22px);
+
+    &-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        animation: kf-slide-in 0.3s;
+    }
+
+    &-rect {
+        display: flex;
+        gap: 0.2em;
+        & > div {
+            background: #222;
+            width: 0.2em;
+            height: 0.7em;
+            border-radius: 2px;
+            animation: kf-vertical-scaling 1s infinite ease;
+
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 0.1s * $i - 0.5s;
+                }
+            }
+        }
+    }
+
+    &-percent {
+        color: #222;
+        font-family: serif;
+        line-height: 1;
+        padding-top: 0.05em;
+    }
+}
+
+@keyframes kf-slide-in {
+    0% {
+        opacity: 0.3;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes kf-vertical-scaling {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.5);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
