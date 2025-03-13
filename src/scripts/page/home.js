@@ -36,7 +36,8 @@ export default async function ({
     const { goTo } = mountNavBtnHandler(
         ".hero__slider",
         ".hero__nav__btn.prev",
-        ".hero__nav__btn.next"
+        ".hero__nav__btn.next",
+        ".hero__ul"
     );
     _goTo = goTo;
 

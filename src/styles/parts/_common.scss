@@ -403,3 +403,18 @@ main {
         opacity: 0 !important;
     }
 }
+
+.hero {
+    &__text {
+        .hero__ul {
+            transition: transform 0.5s ease-out;
+        }
+
+        .hero__li {
+            transition: opacity 0.5s ease-out;
+            position: absolute;
+            width: 100%;
+            left: 0;
+        }
+    }
+}

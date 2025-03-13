@@ -19,21 +19,42 @@ function mountNavBtnHandler(
     const nextEl = INode.getElement(nextBtnSelector);
 
     const slider = world.getObjByEl(sliderSelector);
-    const text = world.getObjByEl(textSelector);
+    const slideUl = INode.getElement(textSelector);
+    const slideLis = [...slideUl.children];
+
+    let translateX = 50;
+    let prevIdx = 0;
+
+    // 初期位置の設定
+    slideLis.forEach((li, i) => {
+        li.style.transform = `translateX(-${i * translateX}px)`;
+        if (i !== 0) {
+            li.style.opacity = 0;
+        }
+    });
 
     function goTo(idx) {
         slider.goTo(idx);
-        text?.goTo?.(idx);
     }
 
     prevEl.addEventListener(config.event.click, () => {
-        const idx = slider.activeSlideIdx - 1;
+        let idx = slider.activeSlideIdx - 1;
+        idx = (slider.texes.size + idx) % slider.texes.size;
         goTo(idx);
+        slideLis[idx].style.opacity = 1;
+        slideLis[prevIdx].style.opacity = 0;
+        slideUl.style.transform = `translateX(${idx * translateX}px)`;
+        prevIdx = idx;
     });
 
     nextEl.addEventListener(config.event.click, () => {
-        const idx = slider.activeSlideIdx + 1;
+        let idx = slider.activeSlideIdx + 1;
+        idx = idx % slider.texes.size;
         goTo(idx);
+        slideLis[idx].style.opacity = 1;
+        slideLis[prevIdx].style.opacity = 0;
+        slideUl.style.transform = `translateX(${idx * translateX}px)`;
+        prevIdx = idx;
     });
 
     return { goTo };
